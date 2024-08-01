@@ -2,3 +2,4 @@ torch
 ml-collections
 diffusers
 transformers
+accelerate
