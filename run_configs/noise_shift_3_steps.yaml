@@ -1,0 +1,19 @@
+breakdown: "x_t_hat_c"
+cross_r: 0.9
+eta_reconstruct: 1
+eta_retrieve: 1
+max_norm_zs: [-1, -1, 15.5]
+model: "stabilityai/sdxl-turbo"
+noise_shift_delta: 1
+noise_timesteps: [599, 299, 0]
+timesteps: [799, 499, 199]
+num_steps_inversion: 5
+step_start: 1
+real_cfg_scale: 0
+real_cfg_scale_save: 0
+scheduler_type: "ddpm"
+seed: 2
+self_r: 0.5
+ws1: 1.5
+ws2: 1
+clean_step_timestep: 0
