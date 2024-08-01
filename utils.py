@@ -485,15 +485,16 @@ def find_index(timesteps, timestep):
             return i
     return -1
 
+device = "cuda:0" if torch.cuda.is_available() else "cpu"
 map_timpstep_to_index = {
     torch.tensor(799): 0,
     torch.tensor(599): 1,
     torch.tensor(399): 2,
     torch.tensor(199): 3,
-    torch.tensor(799, device='cuda:0'): 0,
-    torch.tensor(599, device='cuda:0'): 1,
-    torch.tensor(399, device='cuda:0'): 2,
-    torch.tensor(199, device='cuda:0'): 3,
+    torch.tensor(799, device=device): 0,
+    torch.tensor(599, device=device): 1,
+    torch.tensor(399, device=device): 2,
+    torch.tensor(199, device=device): 3,
 }
 
 def step_save_latents(
