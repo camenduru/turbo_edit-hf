@@ -116,4 +116,4 @@ with gr.Blocks(css="app/style.css") as demo:
     outputs = [result]
     run_button.click(fn=main_pipeline, inputs=inputs, outputs=outputs)
 
-demo.queue(max_size=50).launch(share=True, max_threads=100)
+demo.queue(max_size=50).launch(share=False)
