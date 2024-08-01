@@ -1,3 +1,4 @@
 torch
 ml-collections
 diffusers
+transformers
