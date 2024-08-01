@@ -331,7 +331,7 @@ class myDDPMScheduler(DDPMScheduler):
 
 
 pipeline = AutoPipelineForImage2Image.from_pretrained("stabilityai/sdxl-turbo", torch_dtype=torch.float16, variant="fp16", safety_checker = None)
-pipeline = pipeline.to("cuda")
+pipeline = pipeline.to(device)
 pipeline.scheduler = DDPMScheduler.from_pretrained(  # type: ignore
                 'stabilityai/sdxl-turbo',
                 subfolder="scheduler",
