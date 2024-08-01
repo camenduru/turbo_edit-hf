@@ -8,7 +8,7 @@ from PIL import Image
 num_steps_inversion = 5
 strngth = 0.8
 generator = None
-device = "cuda"
+device = "cuda" if torch.cuda.is_available() else "cpu"
 image_path = "edit_dataset/01.jpg"
 src_prompt = "butterfly perched on purple flower"
 tgt_prompt = "dragonfly perched on purple flower"
