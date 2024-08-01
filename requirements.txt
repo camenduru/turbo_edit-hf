@@ -1,2 +1,3 @@
 torch
 ml-collections
+diffusers
