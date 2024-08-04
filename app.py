@@ -71,39 +71,43 @@ with gr.Blocks(css="app/style.css") as demo:
             # result = gr.Gallery(label='Result')
             result = gr.Image(label="Result", type="pil", height=512, width=512)
 
-            # examples = [
-            #     [
-            #         "demo_im/WhatsApp Image 2024-05-17 at 17.32.53.jpeg", #input_image
-            #         "a painting of a white cat sleeping on a lotus flower", #src_prompt
-            #         "a painting of a white cat sleeping on a lotus flower", #tgt_prompt
-            #         4759, #seed
-            #         1.0, #w1
-            #         # 1.1, #w2
-            #     ],
-            #     [
-            #         "demo_im/pexels-pixabay-458976.less.png", #input_image
-            #         "a squirrel standing in the grass", #src_prompt
-            #         "a squirrel standing in the grass", #tgt_prompt
-            #         6128, #seed
-            #         1.25, #w1
-            #         # 1.1, #w2
-            #     ],
-            # ]
+            examples = [
+                [
+                    "examples_demo/1.jpeg",  # input_image
+                    "a dreamy cat sleeping on a floating leaf",  # src_prompt
+                    "a dreamy bear sleeping on a floating leaf",  # tgt_prompt
+                    7,  # seed
+                    1.3,  # w1
+                ],
+                [
+                    "examples_demo/2.jpeg",  # input_image
+                    "A painting of a cat and a bunny surrounded by flowers",  # src_prompt
+                    "a polygonal illustration of a cat and a bunny",  # tgt_prompt
+                    2,  # seed
+                    1.5,  # w1
+                ],
+                [
+                    "examples_demo/3.jpg",  # input_image
+                    "a chess pawn wearing a crown",  # src_prompt
+                    "a chess pawn wearing a hat",  # tgt_prompt
+                    2,  # seed
+                    1.3,  # w1
+                ],
+            ]
 
-            # gr.Examples(examples=examples,
-            #             inputs=[
-            #                 input_image,
-            #                 src_prompt,
-            #                 tgt_prompt,
-            #                 seed,
-            #                 w1,
-            #                 # w2,
-            #             ],
-            #             outputs=[
-            #                 result
-            #             ],
-            #             fn=main_pipeline,
-            #             cache_examples=True)
+            gr.Examples(
+                examples=examples,
+                inputs=[
+                    input_image,
+                    src_prompt,
+                    tgt_prompt,
+                    seed,
+                    w1,
+                ],
+                outputs=[result],
+                fn=main_pipeline,
+                cache_examples=True,
+            )
 
     inputs = [
         input_image,
