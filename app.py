@@ -95,19 +95,19 @@ with gr.Blocks(css="app/style.css") as demo:
                 ],
             ]
 
-            gr.Examples(
-                examples=examples,
-                inputs=[
-                    input_image,
-                    src_prompt,
-                    tgt_prompt,
-                    seed,
-                    w1,
-                ],
-                outputs=[result],
-                fn=main_pipeline,
-                cache_examples=False,
-            )
+            # gr.Examples(
+            #     examples=examples,
+            #     inputs=[
+            #         input_image,
+            #         src_prompt,
+            #         tgt_prompt,
+            #         seed,
+            #         w1,
+            #     ],
+            #     outputs=[result],
+            #     fn=main_pipeline,
+            #     cache_examples=True,
+            # )
 
     inputs = [
         input_image,
